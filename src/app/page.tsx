@@ -1,5 +1,11 @@
-import { RecipeFormEntry } from "./(components)/RecipeFormEntry";
+import { RecipeFormEntry, LowSodiumRecipeFormEntry } from "@/app/(components)";
 
 export default function Home() {
-  return <RecipeFormEntry />;
+  return (
+    <main>
+      <RecipeFormEntry />
+      <hr className="my-10" />
+      <LowSodiumRecipeFormEntry />
+    </main>
+  );
 }

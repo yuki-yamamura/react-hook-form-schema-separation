@@ -5,6 +5,18 @@ const recipeSchema = z.object({
   ingredients: z.array(z.object({ id: z.string() })),
 });
 
-type RecipeSchemaType = z.infer<typeof recipeSchema>;
+const lowSodiumRecipeSchema = z
+  .object({
+    sodiumContent: z.number(),
+  })
+  .merge(recipeSchema);
 
-export { recipeSchema, type RecipeSchemaType };
+type RecipeSchemaType = z.infer<typeof recipeSchema>;
+type LowSodiumRecipeSchemaType = z.infer<typeof lowSodiumRecipeSchema>;
+
+export {
+  recipeSchema,
+  lowSodiumRecipeSchema,
+  type RecipeSchemaType,
+  type LowSodiumRecipeSchemaType,
+};
