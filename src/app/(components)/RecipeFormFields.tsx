@@ -5,11 +5,16 @@ import { RecipeSchemaType } from "../(schemas)";
 import { useFieldArray } from "react-hook-form";
 import { PropsWithChildren, useCallback } from "react";
 
-type Props = PropsWithChildren<{
-  form: UseFormReturn<RecipeSchemaType>;
+type Props<FieldValues> = PropsWithChildren<{
+  form: FieldValues extends RecipeSchemaType
+    ? UseFormReturn<FieldValues>
+    : never;
 }>;
 
-export const RecipeFormFields = ({ form, children }: Props) => {
+export const RecipeFormFields = <FieldValues extends RecipeSchemaType>({
+  form,
+  children,
+}: Props<FieldValues>) => {
   const { fields, append } = useFieldArray<RecipeSchemaType>({
     control: form.control,
     name: "ingredients",
