@@ -5,7 +5,7 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { recipeSchema, RecipeSchemaType } from "../(schemas)";
 import { useCallback, useEffect } from "react";
 
-export const RecipeFormEntry = () => {
+export const RecipeForm = () => {
   const defaultValues: RecipeSchemaType = {
     title: "",
     ingredients: [],

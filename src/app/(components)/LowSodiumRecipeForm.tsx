@@ -5,7 +5,7 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { lowSodiumRecipeSchema, LowSodiumRecipeSchemaType } from "../(schemas)";
 import { useCallback, useEffect } from "react";
 
-export const LowSodiumRecipeFormEntry = () => {
+export const LowSodiumRecipeForm = () => {
   const defaultValues: LowSodiumRecipeSchemaType = {
     title: "",
     ingredients: [],
