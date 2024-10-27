@@ -1,2 +1,2 @@
-export * from "./LowSodiumRecipeFormEntry";
-export * from "./RecipeFormEntry";
+export * from "./LowSodiumRecipeForm";
+export * from "./RecipeForm";

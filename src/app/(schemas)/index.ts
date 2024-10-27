@@ -7,7 +7,10 @@ const recipeSchema = z.object({
 
 const lowSodiumRecipeSchema = z
   .object({
-    sodiumContent: z.number(),
+    sodiumContent: z
+      .string()
+      .transform((value) => Number(value))
+      .pipe(z.number()),
   })
   .merge(recipeSchema);
 
